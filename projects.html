@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhay Mallah | Editing Projects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #050505;
+            color: #eee;
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #111; }
+        ::-webkit-scrollbar-thumb { background: #FF007F; }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #00E0FF, #FF007F);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .btn-primary-tool {
+            background: linear-gradient(90deg, #00E0FF, #FF007F);
+            border: none;
+            padding: 10px 28px;
+            border-radius: 4px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 5%;
+            background: #050505cc;
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #FF007F30;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #00E0FF, #FF007F);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #ccc;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .nav-links a:hover, .nav-links a.active { color: #00E0FF; }
+        .menu-icon { display: none; font-size: 26px; cursor: pointer; }
+        section { padding: 120px 5% 80px; }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 50px;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .edit-card {
+            background: #0b0b0f;
+            border: 1px solid #222;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: 0.2s;
+        }
+        .edit-card:hover {
+            border-color: #00E0FF;
+            transform: translateY(-6px);
+        }
+        .edit-card img, .edit-card video {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+        .edit-info {
+            padding: 20px;
+        }
+        .edit-category {
+            color: #FF007F;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #222;
+        }
+        @media (max-width: 768px) {
+            .menu-icon { display: block; }
+            .nav-links { display: none; }
+            .nav-links.active { display: flex; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background: #050505; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <div class="logo">ABHAY<span class="gradient-text">MALLAH</span></div>
+    <div class="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="projects.html" class="active">PROJECTS</a></li>
+        <li><a href="index.html#contact">CONTACT</a></li>
+    </ul>
+</nav>
+
+<section>
+    <h2 class="section-title">BEFORE / AFTER <span class="gradient-text">EDITING SHOWCASE</span></h2>
+    <div class="projects-grid" data-aos="fade-up">
+        <div class="edit-card">
+            <img src="https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg?auto=compress&w=600" alt="before">
+            <div class="edit-info">
+                <div class="edit-category">📸 COLOR GRADING</div>
+                <h3>Portrait – Warm Cinematic Tone</h3>
+                <button class="btn-primary-tool" style="margin-top:12px;" onclick="alert('Before/After slider available on WhatsApp')">VIEW EDIT →</button>
+            </div>
+        </div>
+        <div class="edit-card">
+            <video src="https://videos.pexels.com/video-files/3195394/3195394-uhd_2560_1440_25fps.mp4" autoplay muted loop></video>
+            <div class="edit-info">
+                <div class="edit-category">🎥 VIDEO LUT</div>
+                <h3>Cinematic Teal & Orange Grade</h3>
+                <button class="btn-primary-tool" onclick="alert('Watch full graded video')">WATCH →</button>
+            </div>
+        </div>
+        <div class="edit-card">
+            <img src="https://images.pexels.com/photos/1450082/pexels-photo-1450082.jpeg?auto=compress&w=600" alt="retouch">
+            <div class="edit-info">
+                <div class="edit-category">✨ RETOUCH</div>
+                <h3>Skin Smoothing + Dodge & Burn</h3>
+                <button class="btn-primary-tool" onclick="alert('High-res edit sample')">SEE DETAIL →</button>
+            </div>
+        </div>
+        <div class="edit-card">
+            <div style="background:#111; height:220px; display:flex; align-items:center; justify-content:center;"><i class="fab fa-instagram fa-4x" style="color:#FF007F;"></i></div>
+            <div class="edit-info">
+                <div class="edit-category">📱 REEL EDIT</div>
+                <h3>Transition Reel – 2M+ Views</h3>
+                <button class="btn-primary-tool" onclick="alert('Instagram reel link shared')">PLAY REEL →</button>
+            </div>
+        </div>
+        <div class="edit-card">
+            <img src="https://images.pexels.com/photos/2765065/pexels-photo-2765065.jpeg?auto=compress&w=600" alt="product">
+            <div class="edit-info">
+                <div class="edit-category">🛒 PRODUCT EDIT</div>
+                <h3>Background Removal & Color Pop</h3>
+                <button class="btn-primary-tool" onclick="alert('Before/After image')">COMPARE →</button>
+            </div>
+        </div>
+        <div class="edit-card">
+            <video src="https://videos.pexels.com/video-files/2054606/2054606-uhd_2560_1440_24fps.mp4" autoplay muted loop></video>
+            <div class="edit-info">
+                <div class="edit-category">🚁 DRONE GRADE</div>
+                <h3>Aerial Footage – Moody LUT</h3>
+                <button class="btn-primary-tool" onclick="alert('Full 4K graded version')">PREVIEW →</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>© 2026 ABHAY MALLAH — EDITING LAB</footer>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({duration:800});
+    function toggleMenu(){document.getElementById('navLinks').classList.toggle('active');}
+</script>
+</body>
+</html>
